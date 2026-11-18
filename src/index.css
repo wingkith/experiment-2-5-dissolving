@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(6px) scaleX(0.95);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-22px) scaleX(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes stirOrbit {
+  0% {
+    transform: translateX(-11px);
+  }
+  50% {
+    transform: translateX(11px);
+  }
+  100% {
+    transform: translateX(-11px);
+  }
+}
+
+@keyframes swirlSpin {
+  0% {
+    transform: scaleX(0.92);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scaleX(1.06);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(0.92);
+    opacity: 0.45;
+  }
+}
+
+.animate-steam-1 {
+  animation: steamRise 2.4s ease-out infinite;
+}
+.animate-steam-2 {
+  animation: steamRise 2.8s ease-out 0.8s infinite;
+}
+.animate-steam-3 {
+  animation: steamRise 2.6s ease-out 1.5s infinite;
+}
+
+.animate-stir-rod {
+  animation: stirOrbit 0.85s ease-in-out infinite;
+}
+
+.animate-swirl {
+  animation: swirlSpin 0.85s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-steam-1,
+  .animate-steam-2,
+  .animate-steam-3,
+  .animate-stir-rod,
+  .animate-swirl {
+    animation: none !important;
+  }
+}
